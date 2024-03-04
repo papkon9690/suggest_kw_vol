@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>サジェストキーワードと検索vol取得</h1>
+    <form action="/vol_result" method="POST" id="ajax-result">
+        <textarea name="main_keyword" class="textArea" ></textarea>
+        <button type="submit" class="btn" onclick="OnButtonClick();" style="margin-top: 30px;">取得開始</button>
+    </form>
+    {% if not form_flag %}
+        <div id="js_wait_btn_output"></div>
+    {% endif %}
+    <p><br></p>
+
+    {% if form_flag %}
+        <h3>正常に取得できました</h3>
+        {% if main_kw_count > 1 %}
+            <div class="button019">
+                <a href="{{ url_for('zip_csv_download') }}">CSV形式でダウンロード</a>
+            </div>
+        {% endif %}
+        {% if 2 > main_kw_count %}
+            <div class="button019">
+                <a href="{{ url_for('csv_download') }}">CSV形式でダウンロード</a>
+            </div>
+        {% endif %}
+        <p><br></p>
+        <div class="button019">
+            <a href="{{ url_for('excel_download') }}">Excel形式でダウンロード</a>
+        </div>
+        <p><br></p>
+    {% endif %}
+{% endblock %}

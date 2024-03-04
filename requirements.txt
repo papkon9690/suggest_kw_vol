@@ -1,0 +1,6 @@
+gunicorn
+selenium
+webdriver-manager
+beautifulsoup4
+Flask
+openpyxl

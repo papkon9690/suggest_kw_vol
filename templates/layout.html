@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SEO対策サイト</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/btn.css') }}">
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/ajax.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    </head>
+
+    <body>
+        <header class="header-title">
+            <!-- <div class="header-title">--><a href="{{ url_for('suggest_vol') }}">SEO対策サイト</a><!--</div> -->
+        </header>
+        <div class="header-group">
+            <header>
+                <nav class="nav">
+                    <ul class="menu-group">
+                        <li class="menu-item"><a href="{{ url_for('suggest_vol') }}">サジェストkwのvol</a></li>
+                        <!-- <li class="menu-item"><a href="#">ページ３</a></li> -->
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <p><br><br></p>
+    </body>
+
+</html>
